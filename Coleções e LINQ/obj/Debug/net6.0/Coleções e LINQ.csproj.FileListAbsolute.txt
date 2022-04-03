@@ -1,0 +1,15 @@
+/home/tadashi/workspace/DIO/Localiza Labs dotNET dev/Coleções e LINQ/bin/Debug/net6.0/Coleções e LINQ
+/home/tadashi/workspace/DIO/Localiza Labs dotNET dev/Coleções e LINQ/bin/Debug/net6.0/Coleções e LINQ.deps.json
+/home/tadashi/workspace/DIO/Localiza Labs dotNET dev/Coleções e LINQ/bin/Debug/net6.0/Coleções e LINQ.runtimeconfig.json
+/home/tadashi/workspace/DIO/Localiza Labs dotNET dev/Coleções e LINQ/bin/Debug/net6.0/Coleções e LINQ.dll
+/home/tadashi/workspace/DIO/Localiza Labs dotNET dev/Coleções e LINQ/bin/Debug/net6.0/Coleções e LINQ.pdb
+/home/tadashi/workspace/DIO/Localiza Labs dotNET dev/Coleções e LINQ/obj/Debug/net6.0/Coleções e LINQ.csproj.AssemblyReference.cache
+/home/tadashi/workspace/DIO/Localiza Labs dotNET dev/Coleções e LINQ/obj/Debug/net6.0/Coleções e LINQ.GeneratedMSBuildEditorConfig.editorconfig
+/home/tadashi/workspace/DIO/Localiza Labs dotNET dev/Coleções e LINQ/obj/Debug/net6.0/Coleções e LINQ.AssemblyInfoInputs.cache
+/home/tadashi/workspace/DIO/Localiza Labs dotNET dev/Coleções e LINQ/obj/Debug/net6.0/Coleções e LINQ.AssemblyInfo.cs
+/home/tadashi/workspace/DIO/Localiza Labs dotNET dev/Coleções e LINQ/obj/Debug/net6.0/Coleções e LINQ.csproj.CoreCompileInputs.cache
+/home/tadashi/workspace/DIO/Localiza Labs dotNET dev/Coleções e LINQ/obj/Debug/net6.0/Coleções e LINQ.dll
+/home/tadashi/workspace/DIO/Localiza Labs dotNET dev/Coleções e LINQ/obj/Debug/net6.0/refint/Coleções e LINQ.dll
+/home/tadashi/workspace/DIO/Localiza Labs dotNET dev/Coleções e LINQ/obj/Debug/net6.0/Coleções e LINQ.pdb
+/home/tadashi/workspace/DIO/Localiza Labs dotNET dev/Coleções e LINQ/obj/Debug/net6.0/Coleções e LINQ.genruntimeconfig.cache
+/home/tadashi/workspace/DIO/Localiza Labs dotNET dev/Coleções e LINQ/obj/Debug/net6.0/ref/Coleções e LINQ.dll
