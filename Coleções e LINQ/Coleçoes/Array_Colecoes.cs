@@ -1,3 +1,5 @@
+using System;
+
 namespace Coleções_e_LINQ.Coleçoes
 {
     public class Array_Colecoes
