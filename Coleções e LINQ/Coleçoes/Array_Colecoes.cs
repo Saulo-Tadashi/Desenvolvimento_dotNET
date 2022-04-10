@@ -1,26 +1,68 @@
 using System;
-
+/** 
+*
+* Classe para operações de vetor e matriz com tipagem no momento da inicialização.
+* Abstração e encapsulamento para tratamento uniforme para ambos os tipos.
+*
+*/
 namespace Coleções_e_LINQ.Coleçoes
 {
+    enum Array_Enum : int
+    {
+     
+        Invalido = -1,
+        Matriz = 0,
+        Vetor = 1
+    }
+
     public class Array_Colecoes
     {
-         private int[] array;
+         private int[,] array;
 
         public Array_Colecoes (int tamanho)
         {
-            array = new int[tamanho];
+            array = new int[1,tamanho];
         }
 
-        public int pegar_valor(int indice)
+        public Array_Colecoes (int linha, int coluna)
+        {
+            array = new int[linha, coluna];
+        }
+
+        private bool conferir_intervalo(int linha, int coluna)
+        {
+            if(conferir_linha(linha) && conferir_indice(coluna)) 
+                return true;
+
+            System.Console.WriteLine("Parâmetros incorretos para conferência de matriz");
+            return false;
+        }
+        
+        private bool conferir (int valor, Array_Enum dimensao)
+        {
+            return valor >=0 && valor < array.GetLength((int)(dimensao));
+        }
+
+        private bool conferir_linha(int linha)
+        {
+            return conferir (linha, Array_Enum.Matriz);
+        }
+
+        private bool conferir_indice(int indice)
+        {
+            return conferir (indice, Array_Enum.Vetor);
+        }
+
+        //Pegar valor com conferência de índice
+        private int pegar_valor (int linha, int indice)
         {
             int valor = 0;
             try
             {
-                valor = array[indice];
-            }
-            catch(IndexOutOfRangeException)
-            {
-                System.Console.WriteLine("Índice fora do vetor");
+                if (conferir_intervalo(linha, indice))
+                   valor = array[linha, indice];
+                else 
+                    System.Console.WriteLine("Índice fora do vetor;");
             }
             catch (Exception e)
             {
@@ -29,27 +71,39 @@ namespace Coleções_e_LINQ.Coleçoes
             }
             return valor;
         }
-
-        public bool inserir_valor(int indice)
+        
+        //Guardar valor com conferência de índice e tipo de dado
+        private bool inserir_valor(int linha, int indice)
         {
             bool validade = false;
+            string entrada;
             try
             {
-                array [indice] = int.Parse(Console.ReadLine());
-                validade = true;
-            }
-            catch(ArgumentNullException)
-            {
-                System.Console.WriteLine("Valor nulo inválido");
+                if(conferir_intervalo(linha, indice))
+                {
+                    do
+                    {
+                        try
+                        {
+                            entrada = Console.ReadLine();
+                            array[linha, indice] = int.Parse(entrada);
+                            validade = true;
+                        }
+                        catch(ArgumentNullException)
+                        {
+                            System.Console.WriteLine("Valor nulo inválido");
+                        }
+                        catch(FormatException)
+                        {
+                            System.Console.WriteLine("Insira apenas valores numéricos");
+                        }
+                    }while (!validade);
+                }
             }
             catch(ArgumentOutOfRangeException e)
             {
                 System.Console.WriteLine("Erro de range");
                 System.Console.WriteLine(e.Message);
-            }
-            catch(FormatException)
-            {
-                System.Console.WriteLine("Insira apenas valores numéricos");
             }
             catch (Exception e)
             {
@@ -58,12 +112,27 @@ namespace Coleções_e_LINQ.Coleçoes
             }
             return validade;
         }
+        
+        public bool preencher_array ()
+        {
+            bool validade = true;
+            for(int i = 0; i < array.GetLength(0) && validade; i++)
+            {
+                System.Console.WriteLine($"Linha {i+1}");
+                for(int j = 0; j < array.GetLength(1) && validade; j++)
+                    validade = inserir_valor(i, j);
+            }
+            return validade;
+        }
 
         public void imprimir_array ()
         {
-            foreach(var item in array)
+            for(var i = 0; i < array.GetLength(0); i++)
             {
-                System.Console.WriteLine(item);
+                System.Console.WriteLine($"Linha {i+1}");
+                for(var j = 0; j < array.GetLength(1); j++)
+                    System.Console.Write($"<{array[i,j]}>");
+                System.Console.WriteLine("");
             }
         }
     }
