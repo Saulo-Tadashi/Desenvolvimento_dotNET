@@ -76,7 +76,7 @@ namespace Coleções_e_LINQ.Coleçoes
         private bool inserir_valor(int linha, int indice)
         {
             bool validade = false;
-            string entrada;
+            string? entrada;
             try
             {
                 if(conferir_intervalo(linha, indice))
@@ -85,9 +85,15 @@ namespace Coleções_e_LINQ.Coleçoes
                     {
                         try
                         {
-                            entrada = Console.ReadLine();
-                            array[linha, indice] = int.Parse(entrada);
-                            validade = true;
+                            if((entrada = Console.ReadLine()) != null)
+                            {
+                                array[linha, indice] = int.Parse(entrada);
+                                validade = true;
+                            }
+                            else
+                            {
+                                System.Console.WriteLine("Entrada vazia inválida");
+                            }
                         }
                         catch(ArgumentNullException)
                         {

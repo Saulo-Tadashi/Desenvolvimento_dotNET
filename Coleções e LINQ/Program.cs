@@ -9,7 +9,7 @@ namespace Colecoes_e_LINQ
         {
             int tamanho = 0, linhas = 0;
             Array_Enum tipo = Array_Enum.Invalido;
-            string entrada = "";
+            string? entrada = "";
 
             do
             {
@@ -18,23 +18,32 @@ namespace Colecoes_e_LINQ
                 System.Console.WriteLine("2 - Matriz");
                 try
                 {
-                    entrada = Console.ReadLine();
-                    switch (entrada) {
+                    string? temp;
+                    switch ((entrada = Console.ReadLine())) {
                         case "1":    
                             System.Console.WriteLine("Digite o tamanho do vetor:");
-                            tamanho = int.Parse(System.Console.ReadLine());
-                            tipo = Array_Enum.Vetor;
+                            if((temp = System.Console.ReadLine())!= null)
+                            {
+                                tamanho = int.Parse(temp);
+                                tipo = Array_Enum.Vetor;
+                            }
                             break;
                         case "2":
                             System.Console.WriteLine("Digite a altura da matriz:");
-                            linhas = int.Parse(System.Console.ReadLine());
-                            System.Console.WriteLine("Digite a largura da matriz");
-                            tamanho = int.Parse(System.Console.ReadLine());
-                            tipo = Array_Enum.Matriz;
+                            if((temp = System.Console.ReadLine()) != null)
+                            {
+                                linhas = int.Parse(temp);
+                                System.Console.WriteLine("Digite a largura da matriz");
+
+                                if((temp = System.Console.ReadLine()) != null)
+                                {
+                                    tamanho = int.Parse(temp);
+                                    tipo = Array_Enum.Matriz;
+                                }
+                            }
                             break;
                         case "0":
                             return;
-                            break;
                         default:
                             System.Console.WriteLine("Escolha inválida");
                             break;
