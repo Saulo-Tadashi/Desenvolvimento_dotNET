@@ -1,5 +1,5 @@
 ﻿using System;
-using Coleções_e_LINQ.Coleçoes;
+using Colecoes_e_LINQ.Colecoes;
 
 namespace Colecoes_e_LINQ
 {

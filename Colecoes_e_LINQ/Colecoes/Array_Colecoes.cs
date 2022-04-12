@@ -5,7 +5,7 @@ using System;
 * Abstração e encapsulamento para tratamento uniforme para ambos os tipos.
 *
 */
-namespace Coleções_e_LINQ.Coleçoes
+namespace Colecoes_e_LINQ.Colecoes
 {
     enum Array_Enum : int
     {
