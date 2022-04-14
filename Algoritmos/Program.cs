@@ -13,13 +13,13 @@ namespace Algoritmos
 
             //imprimir array antes da ordenação
             System.Console.WriteLine("Array desordenado:");
-            ord.imprimir_array(ref vec);
+            ord.imprimir_array(in vec);
 
             ord.ordenar_array(ref vec);
 
             //imprimir array depois da ordenação
             System.Console.WriteLine("Array ordenado:");
-            ord.imprimir_array(ref vec);
+            ord.imprimir_array(in vec);
             System.Console.WriteLine("Contador: "+ord.obter_contador());
         }
     }

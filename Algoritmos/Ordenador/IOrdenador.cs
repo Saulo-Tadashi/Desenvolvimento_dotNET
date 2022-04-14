@@ -4,7 +4,7 @@ namespace Algoritmos.Ordenador
     {
         public bool ordenar_array (ref int[] ar);   
 
-        public void imprimir_array (ref int[] ar);
+        public void imprimir_array (in int[] ar);
 
         public int obter_contador ();
     }
